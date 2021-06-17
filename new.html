@@ -1,0 +1,19 @@
+<style>main{background-color:red;}</style>
+<body id="main">
+<div>
+<center>
+root@localhost~#<input id="input"/><button onclick="cmd();">submit</button></div>
+<div id="out"></div>
+<script>
+function cmd()
+{
+var objXHR=new XMLHttpRequest();
+objXHR.open("GET","http://192.168.43.188/cgi-bin/new.py?x="+document.getElementById('input').value,"true");
+	objXHR.send();
+	objXHR.onload=function()
+	{
+	document.getElementById("out").innerHTML=objXHR.responseText;
+	}
+}
+</script>
+</body>
